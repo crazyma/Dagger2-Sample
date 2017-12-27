@@ -13,6 +13,6 @@ public class Car {
     }
 
     public String getWheelInfo(){
-        return "friction : " + wheel.getFriction();
+        return "brand : " + wheel.getBrand();
     }
 }

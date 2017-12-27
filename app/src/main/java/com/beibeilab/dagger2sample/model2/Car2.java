@@ -16,7 +16,7 @@ public class Car2 {
     }
 
     public String getWheelInfo(){
-        return "friction : " + wheel2.getFriction();
+        return "friction : " + wheel2.getBrand();
     }
 
 }

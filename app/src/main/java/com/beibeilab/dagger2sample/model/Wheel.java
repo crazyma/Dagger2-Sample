@@ -5,9 +5,8 @@ package com.beibeilab.dagger2sample.model;
  */
 
 public class Wheel {
-    private int friction = 4;
 
-    public int getFriction(){
-        return friction;
+    public String getBrand(){
+        return "Continental";
     }
 }

@@ -11,10 +11,8 @@ public class Wheel2 {
     @Inject
     public Wheel2() {}
 
-    private int friction = 2;
-
-    public int getFriction(){
-        return friction;
+    public String getBrand(){
+        return "Bridgestone";
     }
 
 }

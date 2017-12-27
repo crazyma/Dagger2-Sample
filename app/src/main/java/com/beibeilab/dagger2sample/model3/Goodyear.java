@@ -6,7 +6,7 @@ package com.beibeilab.dagger2sample.model3;
 
 public class Goodyear extends Wheel3 {
     @Override
-    public int getFriction() {
-        return 9;
+    public String getBrand() {
+        return "Goodyear";
     }
 }

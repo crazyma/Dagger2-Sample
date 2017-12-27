@@ -5,5 +5,5 @@ package com.beibeilab.dagger2sample.model3;
  */
 
 public abstract class Wheel3 {
-    public abstract int getFriction();
+    public abstract String getBrand();
 }
