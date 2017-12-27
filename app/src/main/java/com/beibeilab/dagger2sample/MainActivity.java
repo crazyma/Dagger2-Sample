@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.beibeilab.dagger2sample.model.Car;
 import com.beibeilab.dagger2sample.model2.Car2;
 import com.beibeilab.dagger2sample.model.Wheel;
+import com.beibeilab.dagger2sample.model3.Car3;
 
 import javax.inject.Inject;
 
@@ -20,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Inject
     Car2 car2;
+
+//    @Inject
+//    Car3 car3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,17 +45,23 @@ public class MainActivity extends AppCompatActivity {
         daggerDI();
     }
 
-    private void normalDI(){
+    private void normalDI() {
         Wheel wheel = new Wheel();
         car = new Car(wheel);
 
         Toast.makeText(this, car.getWhellInfo(), Toast.LENGTH_SHORT).show();
     }
 
-    private void daggerDI(){
+    private void daggerDI() {
         DaggerMainActivityComponent.create().inject(this);
         String show = car2.getWhellInfo();
         Toast.makeText(MainActivity.this, show, Toast.LENGTH_SHORT).show();
+    }
+
+    private void daggerDI2() {
+//        DaggerMainActivityComponent2.create().inject(this);
+//        String show = car3.getWhellInfo();
+//        Toast.makeText(MainActivity.this, show, Toast.LENGTH_SHORT).show();
     }
 
 }
