@@ -15,7 +15,7 @@ public class Car2 {
         this.wheel2 = wheel2;
     }
 
-    public String getWhellInfo(){
+    public String getWheelInfo(){
         return "friction : " + wheel2.getFriction();
     }
 

@@ -19,6 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".model.NormalActivity" />
+        <activity android:name=".model2.BasicDaggerActivity" />
+        <activity android:name=".model3.ModuleDaggerActivity"></activity>
     </application>
 
 </manifest>

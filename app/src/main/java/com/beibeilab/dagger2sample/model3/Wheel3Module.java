@@ -12,7 +12,7 @@ public class Wheel3Module {
 
     @Provides
     Wheel3 provideWheel3() {
-        return new Maxxis();
+        return new Goodyear();
     }
 
 }

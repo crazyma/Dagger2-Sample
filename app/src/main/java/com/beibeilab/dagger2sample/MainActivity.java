@@ -1,29 +1,18 @@
 package com.beibeilab.dagger2sample;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Toast;
 
-import com.beibeilab.dagger2sample.model.Car;
-import com.beibeilab.dagger2sample.model2.Car2;
-import com.beibeilab.dagger2sample.model.Wheel;
-import com.beibeilab.dagger2sample.model3.Car3;
-
-import javax.inject.Inject;
+import com.beibeilab.dagger2sample.model.NormalActivity;
+import com.beibeilab.dagger2sample.model2.BasicDaggerActivity;
+import com.beibeilab.dagger2sample.model3.ModuleDaggerActivity;
 
 public class MainActivity extends AppCompatActivity {
-
-    private Car car;
-
-    @Inject
-    Car2 car2;
-
-//    @Inject
-//    Car3 car3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,28 +29,24 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-//        normalDI();
-        daggerDI();
     }
 
-    private void normalDI() {
-        Wheel wheel = new Wheel();
-        car = new Car(wheel);
+    public void buttonClicked(View view) {
+        Intent intent = new Intent();
 
-        Toast.makeText(this, car.getWhellInfo(), Toast.LENGTH_SHORT).show();
+        switch (view.getId()){
+            case R.id.button1:
+                intent.setClass(this, NormalActivity.class);
+                break;
+            case R.id.button2:
+                intent.setClass(this, BasicDaggerActivity.class);
+                break;
+            case R.id.button3:
+                intent.setClass(this, ModuleDaggerActivity.class);
+                break;
+            default:
+        }
+
+        startActivity(intent);
     }
-
-    private void daggerDI() {
-        DaggerMainActivityComponent.create().inject(this);
-        String show = car2.getWhellInfo();
-        Toast.makeText(MainActivity.this, show, Toast.LENGTH_SHORT).show();
-    }
-
-    private void daggerDI2() {
-//        DaggerMainActivityComponent2.create().inject(this);
-//        String show = car3.getWhellInfo();
-//        Toast.makeText(MainActivity.this, show, Toast.LENGTH_SHORT).show();
-    }
-
 }

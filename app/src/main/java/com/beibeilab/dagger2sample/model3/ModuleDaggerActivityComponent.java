@@ -1,7 +1,5 @@
 package com.beibeilab.dagger2sample.model3;
 
-import com.beibeilab.dagger2sample.MainActivity;
-
 import dagger.Component;
 
 /**
@@ -9,6 +7,6 @@ import dagger.Component;
  */
 
 @Component(modules = Wheel3Module.class)
-public interface MainActivityComponent2 {
-//    void inject(MainActivity activity);
+public interface ModuleDaggerActivityComponent {
+    void inject(ModuleDaggerActivity activity);
 }
