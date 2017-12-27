@@ -8,6 +8,13 @@ import com.beibeilab.dagger2sample.R;
 
 import javax.inject.Inject;
 
+/**
+ 使用 @Module 來向 @Component 提供 依賴的對象
+
+ 可以使用在
+ 1. 依賴對象是 abstract class
+ 2. 依賴對象是第三方Class，無法添加 @Inject
+ */
 public class ModuleDaggerActivity extends AppCompatActivity {
 
     @Inject
