@@ -8,6 +8,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.beibeilab.dagger2sample.models.Car;
+import com.beibeilab.dagger2sample.models.Wheel;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +30,15 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        normalDI();
+    }
+
+    private void normalDI(){
+        Wheel wheel = new Wheel();
+        Car car = new Car(wheel);
+
+        Toast.makeText(this, car.getWhellInfo(), Toast.LENGTH_SHORT).show();
     }
 
 }
