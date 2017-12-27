@@ -1,4 +1,4 @@
-package com.beibeilab.dagger2sample.models;
+package com.beibeilab.dagger2sample.model2;
 
 import javax.inject.Inject;
 

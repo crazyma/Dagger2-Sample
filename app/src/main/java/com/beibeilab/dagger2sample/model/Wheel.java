@@ -1,4 +1,4 @@
-package com.beibeilab.dagger2sample.models;
+package com.beibeilab.dagger2sample.model;
 
 /**
  * Created by david on 2017/12/27.
