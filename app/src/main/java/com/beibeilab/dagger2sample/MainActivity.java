@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
 import com.beibeilab.dagger2sample.model.NormalActivity;
@@ -14,8 +15,15 @@ import com.beibeilab.dagger2sample.model3.ModuleDaggerActivity;
 import com.beibeilab.dagger2sample.model4.QualifierDaggerActivity;
 import com.beibeilab.dagger2sample.model5.ComponentDaggerActivity;
 import com.beibeilab.dagger2sample.model6.SubcomponentDaggerActivity;
+import com.beibeilab.dagger2sample.model7.Car7;
+import com.beibeilab.dagger2sample.model7.SingletonDaggerActivity;
+
+import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
+
+    @Inject
+    Car7 car7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +40,17 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        DaggerMainActivityComponent.builder()
+                .car7Component(
+                        ((App)getApplication()).getCar7Component()
+                ).build().inject(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("crazyma", "car7(Main): " + car7);
     }
 
     public void buttonClicked(View view) {
@@ -55,6 +74,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.button6:
                 intent.setClass(this, SubcomponentDaggerActivity.class);
+                break;
+            case R.id.button7:
+                intent.setClass(this, SingletonDaggerActivity.class);
                 break;
             default:
         }
