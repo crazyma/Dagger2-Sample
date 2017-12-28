@@ -12,6 +12,7 @@ import com.beibeilab.dagger2sample.model.NormalActivity;
 import com.beibeilab.dagger2sample.model2.BasicDaggerActivity;
 import com.beibeilab.dagger2sample.model3.ModuleDaggerActivity;
 import com.beibeilab.dagger2sample.model4.QualifierDaggerActivity;
+import com.beibeilab.dagger2sample.model5.ComponentDaggerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.button4:
                 intent.setClass(this, QualifierDaggerActivity.class);
+                break;
+            case R.id.button5:
+                intent.setClass(this, ComponentDaggerActivity.class);
                 break;
             default:
         }

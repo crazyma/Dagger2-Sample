@@ -22,7 +22,8 @@
         <activity android:name=".model.NormalActivity" />
         <activity android:name=".model2.BasicDaggerActivity" />
         <activity android:name=".model3.ModuleDaggerActivity" />
-        <activity android:name=".model4.QualifierDaggerActivity"></activity>
+        <activity android:name=".model4.QualifierDaggerActivity" />
+        <activity android:name=".model5.ComponentDaggerActivity"></activity>
     </application>
 
 </manifest>
